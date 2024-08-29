@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>your qrcode</title>
+  </head>
+  <body>
+    <img src="<%= data  %>" alt="" />
+    <form action="/verify" method="post">
+      <input type="text" name="username" value="<%= username  %>" readonly />
+      <input
+        type="text"
+        name="secretCodeValue"
+        hidden
+        value="<%= secretCode.ascii  %>"
+      />
+      enter code : <input type="number" name="token" required />
+      <button class="btn btn-success">verify</button>
+    </form>
+  </body>
+</html>
